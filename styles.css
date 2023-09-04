@@ -198,15 +198,12 @@ body::before {
   color: var(--text-color-primary);
 }
 
-/* || Theme toggle styles */
+/* || Theme switch styles */
 .switch {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--text-color-primary);
-  font-weight: var(--font-weight-bold);
-  cursor: pointer;
 }
 
 .switch::before {
@@ -216,6 +213,12 @@ body::before {
   position: absolute;
   top: -1rem;
   background-color: var(--line-background-color);
+}
+
+.switch__label {
+  color: var(--text-color-primary);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
 }
 
 .switch__toggle {
