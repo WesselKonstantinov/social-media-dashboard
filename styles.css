@@ -73,3 +73,70 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+/* || Custom properties */
+:root {
+  --color-lime-green: hsl(163 72% 41%);
+  --color-bright-red: hsl(356 69% 56%);
+  --color-facebook: hsl(208 92% 53%);
+  --color-twitter: hsl(203 89% 53%);
+  --color-instagram: linear-gradient(hsl(37 97% 70%), hsl(329 70% 58%));
+  --color-youtube: hsl(348 97% 39%);
+  --color-toggle-off: linear-gradient(hsl(210 78% 56%), hsl(146 68% 55%));
+  --color-toggle-on: hsl(230 22% 74%);
+  --color-white: hsl(0 0% 100%);
+  --color-pale-blue: hsl(225 100% 98%);
+  --color-light-grayish-blue: hsl(227 47% 96%);
+  --color-dark-grayish-blue: hsl(228 12% 44%);
+  --color-dark-blue: hsl(230 17% 14%);
+  --color-very-dark-blue: hsl(232 19% 15%);
+  --color-dark-desaturated-blue: hsl(228 28% 20%);
+  --color-desaturated-blue: hsl(228 34% 66%);
+  --font-family-primary: "Inter", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --background-color: var(--color-white);
+  --top-background-pattern-color: var(--color-pale-blue);
+  --card-background-color: var(--color-light-grayish-blue);
+  --text-color-primary: var(--color-dark-grayish-blue);
+  --text-color-secondary: var(--color-dark-blue);
+}
+
+:root.dark-mode {
+  --background-color: var(--color-dark-blue);
+  --top-background-pattern-color: var(--color-very-dark-blue);
+  --card-background-color: var(--color-dark-desaturated-blue);
+  --text-color-primary: var(--color-desaturated-blue);
+  --text-color-secondary: var(--color-white);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: var(--color-dark-blue);
+    --top-background-pattern-color: var(--color-very-dark-blue);
+    --card-background-color: var(--color-dark-desaturated-blue);
+    --text-color-primary: var(--color-desaturated-blue);
+    --text-color-secondary: var(--color-white);
+  }
+
+  :root.light-mode {
+    --background-color: var(--color-white);
+    --top-background-pattern-color: var(--color-pale-blue);
+    --card-background-color: var(--color-light-grayish-blue);
+    --text-color-primary: var(--color-dark-grayish-blue);
+    --text-color-secondary: var(--color-dark-blue);
+  }
+}
+
+/* || Global styles */
+.sr-only {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  padding: 0;
+  margin: -0.0625rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
