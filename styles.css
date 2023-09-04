@@ -88,6 +88,7 @@ select {
   --color-pale-blue: hsl(225 100% 98%);
   --color-light-grayish-blue: hsl(227 47% 96%);
   --color-dark-grayish-blue: hsl(228 12% 44%);
+  --color-very-dark-grayish-blue: hsl(230 19% 60%);
   --color-dark-blue: hsl(230 17% 14%);
   --color-very-dark-blue: hsl(232 19% 15%);
   --color-dark-desaturated-blue: hsl(228 28% 20%);
@@ -98,6 +99,7 @@ select {
   --background-color: var(--color-white);
   --top-background-pattern-color: var(--color-pale-blue);
   --card-background-color: var(--color-light-grayish-blue);
+  --line-background-color: var(--color-very-dark-grayish-blue);
   --text-color-primary: var(--color-dark-grayish-blue);
   --text-color-secondary: var(--color-dark-blue);
 }
@@ -106,6 +108,7 @@ select {
   --background-color: var(--color-dark-blue);
   --top-background-pattern-color: var(--color-very-dark-blue);
   --card-background-color: var(--color-dark-desaturated-blue);
+  --line-background-color: var(--color-dark-desaturated-blue);
   --text-color-primary: var(--color-desaturated-blue);
   --text-color-secondary: var(--color-white);
 }
@@ -115,6 +118,7 @@ select {
     --background-color: var(--color-dark-blue);
     --top-background-pattern-color: var(--color-very-dark-blue);
     --card-background-color: var(--color-dark-desaturated-blue);
+    --line-background-color: var(--color-dark-desaturated-blue);
     --text-color-primary: var(--color-desaturated-blue);
     --text-color-secondary: var(--color-white);
   }
@@ -123,6 +127,7 @@ select {
     --background-color: var(--color-white);
     --top-background-pattern-color: var(--color-pale-blue);
     --card-background-color: var(--color-light-grayish-blue);
+    --line-background-color: var(--color-very-dark-grayish-blue);
     --text-color-primary: var(--color-dark-grayish-blue);
     --text-color-secondary: var(--color-dark-blue);
   }
@@ -143,7 +148,6 @@ body::before {
   width: 100%;
   height: 15.25rem;
   position: absolute;
-  top: 0;
   z-index: -1;
   background-color: var(--top-background-pattern-color);
   border-radius: 0 0 1.25rem 1.25rem;
@@ -159,4 +163,47 @@ body::before {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* || Dashboard styles */
+.dashboard {
+  padding: 2.25rem 1.5rem;
+}
+
+.dashboard__inner {
+  max-width: 69.375rem;
+  margin-inline: auto;
+}
+
+.dashboard__cluster {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5625rem;
+}
+
+.dashboard__heading-group {
+  font-weight: var(--font-weight-bold);
+  line-height: normal;
+}
+
+.dashboard__heading {
+  font-size: 1.5rem;
+}
+
+.dashboard__subheading {
+  color: var(--text-color-primary);
+}
+
+/* || Theme toggle styles */
+.switch {
+  position: relative;
+}
+
+.switch::before {
+  content: "";
+  width: 100%;
+  height: 0.0625rem;
+  position: absolute;
+  top: -1rem;
+  background-color: var(--line-background-color);
 }
