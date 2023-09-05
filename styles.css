@@ -236,7 +236,6 @@ body::before {
   border: none;
   background-color: var(--color-toggle-inactive);
   border-radius: 3rem;
-  overflow: hidden;
   cursor: pointer;
 }
 
@@ -252,21 +251,8 @@ body::before {
   transition: transform 0.25s ease;
 }
 
-.switch__toggle::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
+.switch__toggle:hover {
   background-image: var(--color-toggle-active);
-  transition: opacity 0.2s ease-out 0s;
-  opacity: 0;
-}
-
-.switch__toggle:hover::after {
-  opacity: 1;
 }
 
 .switch__toggle:checked {
