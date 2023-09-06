@@ -96,13 +96,16 @@ select {
   --color-dark-blue: hsl(230 17% 14%);
   --color-very-dark-blue: hsl(232 19% 15%);
   --color-dark-desaturated-blue: hsl(228 28% 20%);
+  --color-very-dark-desaturated-blue: hsl(228 25% 27%);
   --color-desaturated-blue: hsl(228 34% 66%);
+  --color-light-desaturated-blue: hsl(228 33% 91%);
   --font-family-primary: "Inter", sans-serif;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --background-color: var(--color-white);
   --top-background-pattern-color: var(--color-pale-blue);
   --card-background-color: var(--color-light-grayish-blue);
+  --card-background-color-hover: var(--color-light-desaturated-blue);
   --line-background-color: var(--color-very-dark-grayish-blue);
   --text-color-primary: var(--color-dark-grayish-blue);
   --text-color-secondary: var(--color-dark-blue);
@@ -112,6 +115,7 @@ select {
   --background-color: var(--color-dark-blue);
   --top-background-pattern-color: var(--color-very-dark-blue);
   --card-background-color: var(--color-dark-desaturated-blue);
+  --card-background-color-hover: var(--color-very-dark-desaturated-blue);
   --line-background-color: var(--color-dark-desaturated-blue);
   --text-color-primary: var(--color-desaturated-blue);
   --text-color-secondary: var(--color-white);
@@ -122,6 +126,7 @@ select {
     --background-color: var(--color-dark-blue);
     --top-background-pattern-color: var(--color-very-dark-blue);
     --card-background-color: var(--color-dark-desaturated-blue);
+    --card-background-color-hover: var(--color-very-dark-desaturated-blue);
     --line-background-color: var(--color-dark-desaturated-blue);
     --text-color-primary: var(--color-desaturated-blue);
     --text-color-secondary: var(--color-white);
@@ -131,6 +136,7 @@ select {
     --background-color: var(--color-white);
     --top-background-pattern-color: var(--color-pale-blue);
     --card-background-color: var(--color-light-grayish-blue);
+    --card-background-color-hover: var(--color-light-desaturated-blue);
     --line-background-color: var(--color-very-dark-grayish-blue);
     --text-color-primary: var(--color-dark-grayish-blue);
     --text-color-secondary: var(--color-dark-blue);
@@ -267,6 +273,11 @@ body::before {
   background-image: var(--color-toggle-active);
 }
 
+.switch__toggle:focus-visible {
+  outline: 0.2rem solid var(--text-color-secondary);
+  outline-offset: 0.2rem;
+}
+
 .switch__toggle:checked {
   --thumb-position: -133%;
   background-image: var(--color-toggle-active);
@@ -296,6 +307,16 @@ body::before {
   font-size: 0.75rem;
   font-weight: var(--font-weight-bold);
   line-height: normal;
+  transition: background-color 0.2s ease-out 0s;
+}
+
+.card:hover {
+  background-color: var(--card-background-color-hover);
+}
+
+.card:focus-within {
+  outline: 0.2rem solid var(--text-color-secondary);
+  outline-offset: 0.2rem;
 }
 
 .card::before {
@@ -380,13 +401,32 @@ body::before {
   line-height: 1;
   text-align: left;
   letter-spacing: 0;
+  grid-row: 1 / 3;
 }
 
-.card__stat--reverse {
+.card__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card__link:focus {
+  outline: none;
+}
+
+.card__link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.card__link--stacked {
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
-  grid-row: 1 / 3;
+  height: 100%;
 }
 
 .card__stat-label {
