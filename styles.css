@@ -263,7 +263,6 @@ body::before {
   border: none;
   background-color: var(--color-toggle-inactive);
   border-radius: 3rem;
-  overflow: hidden;
   cursor: pointer;
 }
 
@@ -288,6 +287,7 @@ body::before {
   right: 0;
   z-index: -1;
   background-image: var(--color-toggle-active);
+  border-radius: 3rem; /* overflow: hidden on parent does not properly clip the pseudo-element on Firefox */
   transition: opacity 0.2s ease-out 0s;
   opacity: 0;
 }
