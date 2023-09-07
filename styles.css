@@ -151,6 +151,7 @@ body {
   font-family: var(--font-family-primary);
   font-size: 0.875rem;
   font-weight: var(--font-weight-regular);
+  line-height: normal;
 }
 
 body::before {
@@ -197,7 +198,6 @@ body::before {
 
 .dashboard__heading-group {
   font-weight: var(--font-weight-bold);
-  line-height: normal;
 }
 
 .dashboard__heading {
@@ -213,6 +213,7 @@ body::before {
 }
 
 .dashboard__subheading {
+  margin-top: 0.21875rem;
   color: var(--text-color-primary);
 }
 
@@ -316,7 +317,7 @@ body::before {
 }
 
 .dashboard__grid--double {
-  margin-top: 1.6875rem;
+  margin-top: 1.5rem;
   gap: 1rem;
   grid-auto-rows: 7.8125rem;
 }
@@ -329,7 +330,6 @@ body::before {
   overflow: hidden;
   font-size: 0.75rem;
   font-weight: var(--font-weight-bold);
-  line-height: normal;
   transition: background-color 0.2s ease-out 0s;
 }
 
@@ -414,7 +414,7 @@ body::before {
 .card__stat {
   --flow-space: 1.75rem;
   font-size: 3.5rem;
-  line-height: 1.06;
+  line-height: 0.857;
   text-align: center;
   letter-spacing: -0.036em;
 }
@@ -453,15 +453,18 @@ body::before {
 }
 
 .card__stat-label {
+  margin: 0.6rem 0 0 0.5rem;
   display: block;
   color: var(--text-color-primary);
   font-size: 0.75rem;
   font-weight: var(--font-weight-regular);
+  line-height: 1.25;
   text-transform: uppercase;
   letter-spacing: 0.42em;
 }
 
 .card__stat-label--regular {
+  margin: 0;
   font-size: 0.875rem;
   font-weight: var(--font-weight-bold);
   line-height: normal;
@@ -492,4 +495,27 @@ body::before {
 
 .card__stat-change--negative {
   color: var(--color-bright-red);
+}
+
+@media (min-width: 40rem) {
+  .dashboard__cluster {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .dashboard__heading--primary {
+    font-size: 1.75rem;
+  }
+
+  .dashboard__grid--double {
+    gap: 1.5rem 1.875rem;
+  }
+
+  .switch {
+    gap: 0.8125rem;
+  }
+
+  .switch::before {
+    display: none;
+  }
 }
