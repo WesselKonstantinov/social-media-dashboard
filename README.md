@@ -23,8 +23,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/social-media-dashboard-built-with-css-grid-and-vanilla-js-tYcTqS_ZYW](https://www.frontendmentor.io/solutions/social-media-dashboard-built-with-css-grid-and-vanilla-js-tYcTqS_ZYW)
+- Live Site URL: [https://wesselkonstantinov.github.io/social-media-dashboard/](https://wesselkonstantinov.github.io/social-media-dashboard/)
 
 ## My process
 
